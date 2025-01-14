@@ -105,6 +105,17 @@ To override heading sizes, we can do:
 
 ![semantic tags](https://www.w3schools.com/html/img_sem_elements.gif)
 
+### `id` vs `class`
+
+A general practice for `id` and `class` are:
+
+- `id`
+    - use for unique elements, set only one styling for one id
+- `class`
+    - can reuse classes to achieve consistent styling
+    - particularly useful on `<div>`
+    - recommended
+
 ## CSS
 
 - Cascading Style Sheets (CSS)
@@ -124,3 +135,13 @@ To override heading sizes, we can do:
     - linking an external `.css` file
     - recommended approach
 
+### CSS Box Model
+
+![CSS Box Model](https://www.simplilearn.com/ice9/free_resources_article_thumb/CSS-Box-Model.png)
+
+- padding (inner spacing)
+    - spacing between content and border
+- border
+    - set width
+- margin (outer spacing)
+    - spacing outside from the border

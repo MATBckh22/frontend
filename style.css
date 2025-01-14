@@ -1,0 +1,131 @@
+/*
+*{
+    to reset, useful for debugging to check for initial spacing
+    margin: 0px;
+    padding: 0px;
+}
+*/
+
+body{
+    color: aliceblue;
+    background-color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+
+    line-height: 1.6em;
+    margin: 20px;
+    padding: 20px;
+}
+
+.container{
+    /* set width to a percentage to make it responsive */
+    width: 80%;
+    margin: auto;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: red;
+}
+
+a:active{
+    color: green;
+}
+
+.button{
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-width: 10px;
+    padding: 10px 15px;
+    border: none;
+}
+
+.box-1{
+    color: black;
+    border-right: red solid;
+    border-right-width: 3px;
+    border-right-style: dashed;
+    padding: 20px;
+    margin: 20px 0px;
+}
+
+/* only affects the main header in box-1 class */
+.box-1 h1{
+    color: cadetblue;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.box-2{
+    color: black;
+    border: 3px;
+    border-style: dashed;
+    padding: 20px;
+    margin: 20px 0px;
+}
+
+p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* or u can do margin: top right bottom left */
+    margin: 5px, 10px, 5px, 10px
+    /* when top = bottom, right = left */
+}
+
+.categories{
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.categories h2{
+    text-align: center;
+}
+
+.categories ul{
+    padding: 0;
+    /* can remove the points by replacing it with none */
+    list-style: none;
+}
+
+.categories li{
+    /* additionaly, u can replace list points with images */
+    padding-bottom: 8px;
+    border-bottom: dotted 1px;
+    /*
+    list-style-image: url("something.png");
+    */
+}
+
+.my-form .form-group{
+    padding-bottom: 20px;
+}
+
+.my-form{
+    padding: 50px;
+}
+
+.my-form label{
+    /* separate lines for labels and input */
+    display: block;
+}
+
+/* we do [type="text"] to exclude the button since it is not a text */
+.my-form input[type="text"], .my-form textarea{
+    padding: 8px;
+    width: 100%;
+}
+
