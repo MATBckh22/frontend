@@ -72,7 +72,7 @@ For links in `src`, we can have:
 
 ### About Headings
 
-We define headings through `<h1>` to `<h6> depending on the importance. Browsers automatically add some white space (a margin) before and after a heading.
+We define headings through `<h1>` to `<h6>` depending on the importance. Browsers automatically add some white space (a margin) before and after a heading.
 
 - search engines use headings to index the structure and content of web pages
 - often skim a page by its headings to show the document structure like how we do in markdown
@@ -88,15 +88,39 @@ To override heading sizes, we can do:
 
 ### Formatting Elements
 
-- <b> - Bold text
-- <strong> - Important text
-- <i> - Italic text
-- <em> - Emphasized text
-- <mark> - Marked text
-- <small> - Smaller text
-- <del> - Deleted text
-- <ins> - Inserted text
-- <sub> - Subscript text
-- <sup> - Superscript text
+```html
+<b> - Bold text
+<strong> - Important text
+<i> - Italic text
+<em> - Emphasized text
+<mark> - Marked text
+<small> - Smaller text
+<del> - Deleted text
+<ins> - Inserted text
+<sub> - Subscript text
+<sup> - Superscript text
+```
 
-### Lists
+### Semantic Tags
+
+![semantic tags](https://www.w3schools.com/html/img_sem_elements.gif)
+
+## CSS
+
+- Cascading Style Sheets (CSS)
+- describes how HTML elements are to be displayed
+- controls layout of multiple web pages all at once
+
+3 Ways to add CSS:
+- inline CSS
+    - directly in the HTML elements
+    - not recommended
+    - not scalable
+- internal CSS
+    - using `<style>` tags within a single document
+    - not recommended
+    - limited to one html file
+- external CSS
+    - linking an external `.css` file
+    - recommended approach
+
