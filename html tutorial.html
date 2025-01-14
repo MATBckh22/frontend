@@ -4,17 +4,115 @@
         <title> Frontend Tutorial </title>
     </head>
 <body>
-
+<!-- Headings -->
 <h1> This is a heading </h1>
+<h1 style="font-size:60px;">Overriding Default Font Size for Heading</h1>
 <h2> This is the 2nd heading (1st subheading) quite similar to markdown using hashtags to define heading and subheadings</h2>
 <h3> We can define this until h6 </h3>
 <h4> filler text </h4>
 <h5> more filler text</h5>
 <h6> last heading </h6>
-
-<p> This is a paragraph </p>
+<!-- paragraphs-->
+<!-- we cannot change display by adding extra spaces or extra lines, HTML ignores all of that by removing any extra spaces or lines-->
+<p> This is a paragraph Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum nostrum,
+    accusamus nulla nesciunt <strong>suscipit illo</strong> maxime facilis tempora officia odit alias doloremque minima 
+    similique <em>dicta at repudiandae</em> inventore dignissimos. </p>
+<!-- horizontal rule to draw a line and break, we can use br if we only want line break-->
+<!-- br is not needed between paragraphs since html does the line break for u with some margin-->
+<!-- we can modify the margin and padding in CSS styles -->
+<hr>
 <p> This is another paragraph, see how it provides vertical spacing to separate paragraphs </p>
-<a href="https://github.com/MATBckh22/frontend">Hyperlink text</a>
+<!-- however, if we want to display the actual intended format with the spaces and lines, we can do preformatted text via pre-->
+<pre>
+    pre-formatted text
+
+    as u can see, it preserves the original spacing and lines
+
+    though in fixed-width font usually Courier
+</pre>
+
+<p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, error.
+</p>
+
+<!-- unordered bulleted point list -->
+
+<ul>
+    <li> item 1 </li>
+    <li> item 2 </li>
+    <li> item 3 </li>
+    <li> item 4 </li>
+</ul>
+
+<!-- ordered lists by replacing them with numbers -->
+
+<ol>
+    <li> item 1 </li>
+    <li> item 2 </li>
+    <li> item 3 </li>
+    <li> item 4 </li>
+</ol>
+
+<!-- table -->
+<!-- tabular data only, do not use this on the layout, CSS handles it -->
+ <table>
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Email </th>
+            <th> Age </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> smol fish </td>
+            <td> something@something.com </td>
+            <td> 21 </td>
+        </tr>
+        <tr>
+            <td> someone </td>
+            <td> something2@something.com </td>
+            <td> 22 </td>
+        </tr>
+    </tbody>
+ </table>
+
+<br>
+<hr>
+<br>
+
+<!-- forms -->
+<!-- build the layout only, not the function -->
+<!-- action attribute submits the form to a certain page / file -->
+<!-- method usually be POST to make POST req to a server: add data to a database securely-->
+<form action="process.js" method="POST">
+    <!-- use div to block the element in a division -->
+    <div>
+        <label> First Name </label>
+    <input type="text" name="firstName">
+    </div>
+    <br>
+    <div>
+        <label> Last Name </label>
+    <input type="text" name="lastName">
+    </div>
+    <!-- use type="email" when we're dealing with an email address -->
+    <br>
+    <div>
+        <label> Email </label>
+    <input type="email" name="lastName">
+    </div>
+    <br>
+    <div>
+        <label> Message </label>
+    <textarea name="message"> </textarea>
+    </div>
+</form>
+
+<br>
+
+<!-- when target is _blank that means it's gonna open a new tab with the website once the hyperlink is clicked-->
+<a href="https://github.com/MATBckh22/frontend" target="_blank">Hyperlink text</a>
 <br>
 <img src="https://static.wikia.nocookie.net/starwars/images/c/cc/Star-wars-logo-new-tall.jpg/revision/latest/scale-to-width-down/1200?cb=20190313021755" alt="star wars" width="105" height="142">
 <br>
