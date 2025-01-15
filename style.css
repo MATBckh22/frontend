@@ -164,12 +164,18 @@ p{
 }
 
 .p-box{
+    color: white;
     width: 800px;
     height: 500px;
-    border: 1px solid black;
+    border: 1px solid white;
     margin-top: 300px;
     /* we put this so that all absolute positioning can be positioned relative to p-box, it's a bit counter-intuitive */
     position: relative;
+    background-image: url("star\ wars.png");
+    background-position: 200px;
+    background-repeat: no-repeat;
+    /* center horizontally and vertically */
+    background-position: center center;
 }
 
 .p-box h1{
@@ -188,4 +194,22 @@ p{
     /* see how we scroll down the page and the button doesn't move, it's position is fixed no matter how we navigate through the website */
     position: fixed;
     top: 400px;
+}
+
+/* pseudo-elements */
+/* can specifiy first item or last item in the list through childs */
+.mylist li:first-child{
+    background: red;
+}
+
+.mylist li:last-child{
+    background: blue;
+}
+
+.mylist li:nth-child(3){
+    background: yellow;
+}
+
+.mylist li:nth-child(even){
+    background: gray;
 }
