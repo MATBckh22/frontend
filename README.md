@@ -145,3 +145,21 @@ A general practice for `id` and `class` are:
     - set width
 - margin (outer spacing)
     - spacing outside from the border
+
+### Positioning in CSS
+
+- static
+    - default
+    - renders in order of the document flow
+- relative
+    - element positioned relative to it's normal position
+    - falls naturally but can add properties
+    - modifiable
+- absolute
+    - targets positioning inside of a relative element
+- fixed
+    - always be in the same position
+- initial
+    - sets the property to the default value
+- inherit
+    - inherit whatever property of it's parent element
