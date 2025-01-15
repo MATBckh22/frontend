@@ -5,6 +5,7 @@ body{
     font-size: 16px;
     line-height: 1.6em;
     margin: 0;
+    padding: 0;
 }
 
 .container{
@@ -16,4 +17,76 @@ body{
 #main-header{
     background-color: beige;
     color: brown;
+}
+
+#navbar{
+    background-color: coral;
+    color: white;
+}
+
+#navbar ul{
+    padding: 0;
+    list-style: none;
+}
+
+#navbar li{
+    display: inline;
+}
+
+#navbar a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 15px;
+}
+
+#showcase{
+    background-image: url(star\ wars.png);
+    background-position: center center;
+    min-height: 300px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#showcase h1{
+    color: white;
+    font-size: 25px;
+    line-height: 1.6em;
+    padding-top: 30px;
+}
+
+#main{
+    float: left;
+    width: 70%;
+    padding: 0px 30px;
+    box-sizing: border-box;
+}
+
+#sidebar{
+    float: right;
+    width: 30%;
+    background: gray;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#main-footer{
+    background: white;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* when the window window gets really small, we remove floats so that main and sidebar stacks on top of each other */
+@media(max-width: 600px){
+    #main{
+        width: 100%;
+        float: none;
+    }
+    #sidebar{
+        width: 100%;
+        float: none;
+    }
 }
