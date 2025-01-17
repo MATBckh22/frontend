@@ -163,3 +163,23 @@ A general practice for `id` and `class` are:
     - sets the property to the default value
 - inherit
     - inherit whatever property of it's parent element
+
+## Flexbox CSS
+
+CSS3 layout mode that is easy and clean to arrange items within a container
+
+- no floats
+- responsive and mobile friendly
+- easy to position child elements
+- flex container's margins do not collapse with the margins of its contents
+- order of elements can easily be changed without editing the source HTML
+
+### Flexible Box Model Concept
+
+- ability to alter item width and height to best fit in its containers
+- direction-agnostic
+    - works well for both horizontal and vertical bias
+- built for small-scale layouts
+    - grids for more large scale
+
+![css flexbox](https://miro.medium.com/v2/resize:fit:1400/0*YeaUsQyhXSL1TCTH.png)

@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    /* align items based on height */
+    /* flex-end moves it down */
+    /* align-items: flex-start; */
+    flex-direction: column;
+}
+
+.container div{
+    padding: 10px;
+    border: 1px solid black;
+
+}
+
+/* we can divide these boxes through ratio */
+.box-1{
+    /* if we set flex to 2 here it will take up 2 spaces */
+    flex: 1;
+    /* order to set which position the content will take */
+    order: 2;
+}
+
+.box-2{
+    flex: 1;
+    order: 1;
+}
+
+.box-3{
+    flex: 1;
+    order: 3;
+}
