@@ -1,31 +1,61 @@
-.container{
-    display: flex;
-    /* align items based on height */
-    /* flex-end moves it down */
-    /* align-items: flex-start; */
-    flex-direction: column;
+/* responsive solution for smartphone screens */
+@media(min-width:768px){
+    .container-1{
+        display: flex;
+        /* align items based on height */
+        /* flex-end moves it down */
+        /* align-items: flex-start; */
+        flex-direction: row;
+    }
+
+    .container-2{
+        display: flex;
+        /*
+        flex-start: align left
+        flex-end: align right
+        center: align middle
+        space-between: allocate equal spacing in between the boxes
+        space-around: allocate equal spoacing in between and the side of the boxes
+        */
+        justify-content: center;
+    }
 }
 
-.container div{
+.container-3{
+    display: flex;
+    /* perform wrapping on the boxes, adjust accordingly to screen width */
+    flex-wrap: wrap;
+}
+
+.container-1 div, .container-2 div, .container-3 div{
     padding: 10px;
     border: 1px solid black;
 
 }
 
+.container2-box{
+    /* flexbox way of doing width */
+    flex-basis: 30%;
+}
+
+.container3-box{
+    flex-basis: 15%;
+}
+
 /* we can divide these boxes through ratio */
-.box-1{
+.container1-box-1{
     /* if we set flex to 2 here it will take up 2 spaces */
     flex: 1;
     /* order to set which position the content will take */
     order: 2;
 }
 
-.box-2{
+.container1-box-2{
     flex: 1;
     order: 1;
 }
 
-.box-3{
+.container1-box-3{
     flex: 1;
     order: 3;
 }
