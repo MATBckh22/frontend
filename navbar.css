@@ -58,10 +58,18 @@ body{
         align-items: center;
         pointer-events: all;
     }
+
+    .how-it-works-hidden{
+        transition: opacity .2s;
+    }
 }
 
 a{
     background-color: transparent;
+}
+
+a.main-link:hover{
+    border-bottom: #0071E3 solid 2px;
 }
 
 .unstyled{
@@ -90,4 +98,30 @@ a{
     stroke: none;
     height: 48px;
     width: 190px;
+}
+
+.how-it-works-hidden{
+    top: 7rem;
+
+    display: flex;
+    z-index: 100;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    left: 50%;
+    background-color: white;
+    width: 780px;
+    transform: translateX(-50%);
+    position: fixed;
+}
+
+.how-it-works-hidden.how-it-works{
+    min-height: 16rem;
+    width: 75.70rem;
+}
+
+.inner-panel-image, .how-it-works-hidden{
+    flex: 0 1 18.875rem;
+    background-color: black;
+
 }
