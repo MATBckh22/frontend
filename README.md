@@ -188,3 +188,11 @@ CSS3 layout mode that is easy and clean to arrange items within a container
 ### CSS Grid
 
 compared to CSS flexbox's column alignments, CSS grid aligns both rows and columns.
+
+## Javascript
+
+- high-level, interpreted
+- conforms to ECMAScript specification
+- multi-paradigm
+- runs on client / browser as well as on the server (Node.js)
+
