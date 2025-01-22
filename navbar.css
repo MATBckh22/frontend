@@ -11,11 +11,47 @@ body{
     position: relative;
 }
 
+a{
+    background-color: transparent;
+}
+
+a.main-link:hover{
+    border-bottom: #0071E3 solid 2px;
+}
+
+.unstyled{
+    display: flex;
+    margin-bottom: 10.5px;
+    margin-top: 8.5px;
+}
+
 .container{
     position: fixed;
     top: 32px;
     left: 0;
     right: 0;
+}
+
+#navbar{
+    background: #000;
+    min-height: 64px;
+    transition: top 0.2s linear;
+    z-index: 9999;
+}
+
+.brand{
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    z-index: 1;
+}
+
+.logo{
+    fill: #fff;
+    stroke: none;
+    height: 48px;
+    width: 190px;
 }
 
 @media(min-width: 1200px){
@@ -48,7 +84,8 @@ body{
         margin-left: auto;
     }
 
-    .main-links, .main-link{
+    .main-links, 
+    .main-link{
         color: #fff;
         text-decoration: none;
         font-weight: 500;
@@ -67,42 +104,6 @@ body{
     }
 }
 
-a{
-    background-color: transparent;
-}
-
-a.main-link:hover{
-    border-bottom: #0071E3 solid 2px;
-}
-
-.unstyled{
-    display: flex;
-    margin-bottom: 10.5px;
-    margin-top: 8.5px;
-}
-
-#navbar{
-    background: #000;
-    min-height: 64px;
-    transition: top 0.2s linear;
-    z-index: 9999;
-}
-
-.brand{
-    min-height: 64px;
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
-    z-index: 1;
-}
-
-.logo{
-    fill: #fff;
-    stroke: none;
-    height: 48px;
-    width: 190px;
-}
-
 .how-it-works-hidden{
     top: 7rem;
 
@@ -118,7 +119,7 @@ a.main-link:hover{
     position: fixed;
 }
 
-/*
+
 .how-it-works-hidden{
     height: 0;
     overflow: hidden;
@@ -126,25 +127,18 @@ a.main-link:hover{
     pointer-events: none;
     transition: unset;
 }
-*/
 
 .how-it-works-hidden.how-it-works{
     min-height: 16rem;
     width: 75.70rem;
 }
 
-.inner-panel-image, .how-it-works-hidden{
-    flex: 0 1 18.875rem;
-    background-color: white;
-}
-
-.main-links{
-    font-size: 0.875rem;
-    line-height: 20px;
-}
 
 .inner-panel-image{
+    flex: 0 1 18.875rem;
+    background-color: black;
     position: relative;
+    min-height: 15rem;
 }
 
 .background-image{
@@ -169,7 +163,8 @@ img{
 .panel-title{
     padding: 3rem;
     z-index: 1;
-    position: relative
+    position: relative;
+    color: white;
 }
 
 .inner-panel-image-title{
@@ -183,12 +178,13 @@ img{
     color: rgba(255, 255, 255, 0.62);
 }
 
-.inner-panel-1{
+.inner-panel-1,
+.inner-panel-2{
     flex: 1;
     border-right: solid 1px rgba(0, 0, 0, 0.13);
 }
 
-.panel-body .how-it-works-hidden{
+.panel-body{
     padding: 2rem;
 }
 
