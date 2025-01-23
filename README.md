@@ -195,4 +195,38 @@ compared to CSS flexbox's column alignments, CSS grid aligns both rows and colum
 - conforms to ECMAScript specification
 - multi-paradigm
 - runs on client / browser as well as on the server (Node.js)
+- **not statically typed**
 
+[JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript)
+
+### Globally Using `name` is Deprecated
+
+[reference](https://stackoverflow.com/questions/65379554/why-does-my-name-variable-show-its-deprecated)
+
+For browsers, global `name` variable has a special meaning. It is fine to use it in a function, but avoid declaring or using it globally.
+
+```js
+(function()){
+    let name = 'Mark';
+    name = 5; // this is fine
+    console.log(name); 
+}
+
+let name = 'Mark';
+name = 5;
+console.log(name);
+```
+
+### JS `typeof null` Returns `object`
+
+[reference](https://stackoverflow.com/questions/18808226/why-is-typeof-null-object)
+
+[explanation from MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#typeof_null)
+
+```js
+const x = null;
+console.log(typeof x)
+typeof null === 'object';
+```
+
+When JS is first implemented, values had a type tag and value representation. Objects had a type tag of 0. `null` also had 0 as its type tag, which explains why it returns `object`.
