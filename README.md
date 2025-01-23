@@ -199,6 +199,42 @@ compared to CSS flexbox's column alignments, CSS grid aligns both rows and colum
 
 [JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript)
 
+### Printing to Console
+
+```js
+console.log("hello world");
+console.error("error");
+console.warn("warning");
+```
+
+### Declaring and Initializing Variables
+
+We use `let` and `const` to declare variables:
+- `let`: allows changing values after initializtion
+- `const`: doesn't allow variables to be reassigned, treat it as a constant
+
+```js
+// var (not recommended), let, const
+let age = 30;
+age = 31;
+console.log(age);
+```
+
+### Primitives and `typeof`
+
+```js
+// String, Numbers, boolean, null, undefined, Symbol
+const _name = "John"; // name as a global variable is deprecated, using it in functions is fine
+const age2 = 30;
+const isCool = false;
+const rating = 4.5;
+const x = null;
+const y = undefined; // not initialized, only declared, same as let without assigning value
+
+console.log(typeof _name, typeof rating);
+console.log(typeof x);
+```
+
 ### Globally Using `name` is Deprecated
 
 [reference](https://stackoverflow.com/questions/65379554/why-does-my-name-variable-show-its-deprecated)
@@ -230,3 +266,327 @@ typeof null === 'object';
 ```
 
 When JS is first implemented, values had a type tag and value representation. Objects had a type tag of 0. `null` also had 0 as its type tag, which explains why it returns `object`.
+
+### Basic String Operations
+
+```js
+// string operations
+// concatenation
+console.log("my name is " + _name);
+
+// template strings (formatted)
+const _string = `and my age is ${age}`;
+console.log(`my name is ${_name}`, _string);
+
+// string properties and methods
+const s = "hello world";
+console.log(s.length);
+console.log(s.toUpperCase);
+console.log(s.toUpperCase);
+console.log(s.substring(0, 5));
+console.log(s.split(' '));
+```
+
+### Arrays
+
+```js
+// arrays
+const numbers = new Array(1,2,3,4,5);
+console.log(numbers);
+console.log(numbers[2]);
+
+// we're using square brackets [] here instead of curly braces
+// can put in multiple data types
+const fruits = ['apples', 'oranges', 'pears'];
+
+// merging arrays
+const mixed = fruits.concat([10, 2.5, true]);
+console.log(fruits);
+console.log(mixed);
+
+// array operations
+fruits.push('grapes'); // push at the end of array
+fruits.unshift('watermelons'); //push from the start of array
+console.log(fruits);
+fruits.pop(); // popping the top of the array
+console.log(Array.isArray(fruits));
+console.log(fruits.indexOf('oranges'));
+```
+
+### Object Literals (Key-Value Pairs or Dictionaries)
+
+```js
+// object literals (key-value pairs or dictionaries)
+person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30,
+    hobbies: ['music', 'sports'],
+    // allows nested object literals too
+    address: {
+        street: '25 main street',
+        city: 'Kuala Lumpur',
+        state: 'Selangor'
+    }
+}
+
+console.log(person); // note that it prints properties in alphabetical order
+console.log(person.lastName);
+console.log(person.address.street);
+console.log(person.hobbies[1]);
+console.log(person.address.street.split(' '));
+
+// directly adding properties into object literals
+person.email = 'John@gmail.com';
+```
+
+### Destructuring
+
+```js
+// destructuring
+const {firstName, lastName, address: { city }}  = person;
+console.log(firstName);
+```
+
+### JavaScript Object Notation (JSON)
+
+- lightweight data interchange format
+    - language independent (text only format)
+- *self-describing* and easy to understand
+
+JSON is important for data transmission between server and client in web applications. Here's an example:
+
+```js
+const todos = [
+    {
+        id: 1,
+        text: 'take out trash',
+        isCompleted: true
+    },
+    {
+        id: 2,
+        text: 'meeting with boss',
+        isCompleted: true
+    },
+    {
+        id: 3,
+        text: 'dentist appointment',
+        isCompleted: true
+    }
+];
+```
+
+We can use `JSON.stringify()` method to convert this to a JSON string:
+
+```js
+const todoJSON = JSON.stringify(todos); // converts to JSON string
+console.log(todoJSON);
+```
+
+The output of this will be:
+
+```json
+[
+   {
+      "id": 1,
+      "text": "take out trash",
+      "isCompleted": true
+   },
+   {
+      "id": 2,
+      "text": "meeting with boss",
+      "isCompleted": true
+   },
+   {
+      "id": 3,
+      "text": "dentist appointment",
+      "isCompleted": true
+   }
+]
+```
+
+### For Loops and High Order Array Methods
+
+Using our previous example of the `todos` object literal:
+
+```js
+// for loop
+for (let i = 0; i < todos.length; i++){
+    console.log(todos[i].text);
+}
+
+// for-of loop
+for (let todo of todos){
+    console.log(todo.text);
+}
+
+// high order array methods (recommended practice for iterating over arrays)
+// forEach (takes in a function parameter)
+todos.forEach(function(todo){
+    console.log(todo.text);
+});
+
+// map
+// returns a new array of text
+const todoText = todos.map(function(todo){
+    return todo.text;
+});
+
+console.log(todoText);
+
+// filter
+// returns a new array of text only when isCompleted is true
+// really powerful method to essentially add a condition when grabbing text
+const todoCompleted = todos.filter(function(todo){
+    return todo.isCompleted === true;
+}).map(function(todo){
+    return todo.text;
+})
+
+console.log(todoCompleted);
+```
+
+### Conditionals
+
+We have to distinguish the difference between double equal sign `==` and triple equal sign `===`:
+- `==`: only checks the value, ignore types
+- `===`: checks both the type and value
+
+```js
+// conditionals
+const x = '10';
+
+// double equal sign checks the value
+if (x == 10){
+    console.log('x is 10');
+}
+
+// triple equal sign checks both the value and the data type
+// mainly use this depending on preference
+if (x === 10){
+    console.log('x is 10');
+}
+else{
+    console.log('x is not 10 or x is not of type number');
+}
+```
+
+we can also use syntatic sugar through ternary operators:
+
+```js
+// conditionals using ternary operators (syntatic sugar)
+const x = 11;
+const color = x > 10 ? 'red' : 'blue';
+console.log(color);
+```
+
+JS also supports switch cases:
+
+```js
+switch (color){
+    case 'red':
+        console.log('color is red');
+        break;
+    case 'blue':
+        console.log('color is blue');
+        break;
+    default:
+        console.log('color is not red or blue');
+        break;
+}
+```
+
+### Functions
+
+```js
+function addNums(num1, num2){
+    console.log(num1 + num2);
+}
+
+function addNumsWithDefaultValues(num1 = 1, num2 = 1){
+    return num1 + num2;
+}
+
+addNums(1, 2);
+addNumsWithDefaultValues();
+console.log(addNumsWithDefaultValues(3, 5)); // overrides the default parameters in the function
+```
+
+### Arrow Functions
+
+Arrow functions are incredibly useful for functions that only have one line operations.
+
+```js
+// arrow functions
+// declare using const and add equal sign = in between function name and parameters
+// add fat arrow =>
+const addNumsUsingArrowFunction = (num1, num2) => num1 + num2;
+console.log(addNumsUsingArrowFunction(1, 1));
+```
+
+With this syntatic sugar, we can simplify high order array methods:
+
+```js
+// note that forEach is still just iterating over the array, we can't let it return something
+const todoForEach = [];
+todos.forEach((todo) => todoForEach.push(todo.text));
+const todoTextMap = todos.map((todo) => todo.text);
+const todoCompletedFilter = todos
+  .filter(todo => todo.isCompleted)
+  .map(todo => todo.text);
+
+console.log(`${todoForEach}\n${todoTextMap}\n${todoCompletedFilter}`);
+```
+
+### Dates
+
+We can create Data objects via the `Date()` constructor:
+
+```js
+// initializing a static Date object with Date() constructor
+const dob = new Date('2018-5-25');
+const now = new Date(); // leave this blank for current time
+console.log(dob);
+console.log(now);
+```
+
+JS outputs in this format on the console:
+
+```
+Fri May 25 2018 00:00:00 GMT+0800 (Malaysia Time)
+Thu Jan 23 2025 23:50:33 GMT+0800 (Malaysia Time)
+```
+
+There are 9 ways to create a Date object:
+
+```js
+new Date()
+new Date(date string)
+
+new Date(year,month)
+new Date(year,month,day)
+new Date(year,month,day,hours)
+new Date(year,month,day,hours,minutes)
+new Date(year,month,day,hours,minutes,seconds)
+new Date(year,month,day,hours,minutes,seconds,ms)
+
+new Date(milliseconds)
+```
+
+### Object Oriented Programming (OOP)
+
+```js
+// constructor function
+function Person(firstName, lastName, dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = dob;
+}
+
+// Instantiate object
+const person1 = new Person('John', 'Doe', '5-3-1980');
+const person2 = new Person('Robert', 'Smith', '3-6-1970');
+
+console.log(person1);
+console.log(person2.firstName);
+```
