@@ -540,6 +540,8 @@ console.log(`${todoForEach}\n${todoTextMap}\n${todoCompletedFilter}`);
 
 ### Dates
 
+**Date Formats**
+
 We can create Data objects via the `Date()` constructor:
 
 ```js
@@ -573,7 +575,13 @@ new Date(year,month,day,hours,minutes,seconds,ms)
 new Date(milliseconds)
 ```
 
+**Getter Setter Methods**
+
 ### Object Oriented Programming (OOP)
+
+**Object Constructors**
+
+Here is an example on how to construct an object (non-primitive) in JS:
 
 ```js
 // constructor function
@@ -589,4 +597,93 @@ const person2 = new Person('Robert', 'Smith', '3-6-1970');
 
 console.log(person1);
 console.log(person2.firstName);
+```
+
+**Function Prototypes**
+
+We can add object methods via function prototypes:
+
+```js
+// constructor function
+function Person(firstName, lastName, dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+}
+
+// function prototypes
+Person.prototype.getBirthYear = function(){
+    return this.dob.getFullYear();
+}
+
+Person.prototype.getFullName = function(){
+    return `${this.firstName} ${this.lastName}`;
+}
+
+// Instantiate object
+const person1 = new Person('John', 'Doe', '5-3-1980');
+const person2 = new Person('Robert', 'Smith', '3-6-1970');
+
+console.log(person1);
+console.log(person2.firstName);
+console.log(person1.dob.getDay);
+console.log(person1.getBirthYear());
+console.log(person2.getFullName());
+```
+
+**Working with Classes**
+
+ES6 introduced syntatic sugar that included classes to work with OOP in JS. With this we can simplify our `Person` example:
+
+```js
+class Person{
+    constructor(firstName, lastName, dob){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob);
+    }
+
+    getBirthYear(){
+        return this.dob.getFullYear();
+    }
+
+    getFullName(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+```
+
+### JavaScript DOM
+
+**Getting Element(s)**
+
+```js
+// DOM
+// single element
+const form = document.getElementById('my-form');
+console.log(document.querySelector('.container')); // classes come with a dot
+console.log(document.querySelector('h1')); // works with tags as well
+
+// multiple elements
+const items = document.querySelectorAll('.item'); // returns a nodelist, able to use array methods on it
+
+items.forEach(item => console.log(item));
+```
+
+**Removing and Modifying Elements from** `ul`
+
+```js
+const ul = document.querySelector('.items');
+//ul.remove(); // remove all elements from ul
+//ul.lastElementChild.remove(); // removes last element from ul
+ul.firstElementChild.textContent = 'Hello'; // changes the content of the first element from ul
+ul.children[1].innerText = 'Brad';
+ul.lastElementChild.innerHTML = '<h1>Hello</h1>'; // adding HTML dynamically
+```
+
+**Modifying CSS Styles**
+
+```js
+const btn = document.querySelector('.btn');
+btn.style.background = 'red'; // more dynamic than changing it in CSS
 ```
