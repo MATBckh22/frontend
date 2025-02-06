@@ -687,3 +687,73 @@ ul.lastElementChild.innerHTML = '<h1>Hello</h1>'; // adding HTML dynamically
 const btn = document.querySelector('.btn');
 btn.style.background = 'red'; // more dynamic than changing it in CSS
 ```
+
+**Event Listeners**
+
+`addEventListener()` creates an event listener with event and function (that takes the event parameter `e`) as parameters:
+
+```js
+const btn = document.querySelector('.btn');
+
+/* create an event listener
+event and function as parameters
+the click output flashes quickly since the button is submit
+when the submit button is clicked it submits the form to a file
+we have to prevent the default behaviour on this particular button
+*/
+
+btn.addEventListener('click', (e) => {
+    console.log('click');
+});
+```
+
+Note that the click output flashes quickly since the button is `submit`. When the `submit` button is clicked it submits the form to a file. We have to fix this by preventing the default behaviour on this particular button:
+
+```js
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(e);
+    console.log(e.target);
+});
+```
+
+**Modifying CSS Styles via Mouse Click**
+
+```js
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#my-form').style.background = '#ccc';
+    document.querySelector('body').classList.add('bg-dark');
+    document.querySelector('.items').lastElementChild.innerHTML = '<h1>Hello</h1>';
+});
+```
+
+```js
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userList = document.querySelector('#users');
+
+myForm.addEventListener('submit', onSubmit);
+
+// remember that the function takes an event parameter
+function onSubmit(e){
+    e.preventDefault();
+
+    if (nameInput.value === '' || emailInput.value === ''){
+        msg.classList.add('error');
+        msg.innerHTML = 'Please enter all fields';
+        setTimeout(() => msg.remove(), 3000); // takes time in miliseconds
+    }
+    else{
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
+        userList.appendChild(li);
+
+        // clear fields
+        nameInput.value = '';
+        emailInput.value = '';
+    }
+}
+```

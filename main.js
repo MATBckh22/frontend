@@ -1,22 +1,27 @@
-console.log(window); // top level
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userList = document.querySelector('#users');
 
-// DOM
-// single element
-const form = document.getElementById('my-form');
-console.log(document.querySelector('.container')); // classes come with a dot
-console.log(document.querySelector('h1')); // works with tags as well
+myForm.addEventListener('submit', onSubmit);
 
-// multiple elements
-const items = document.querySelectorAll('.item'); // returns a nodelist, able to use array methods on it
+// remember that the function takes an event parameter
+function onSubmit(e){
+    e.preventDefault();
 
-items.forEach(item => console.log(item));
+    if (nameInput.value === '' || emailInput.value === ''){
+        msg.classList.add('error');
+        msg.innerHTML = 'Please enter all fields';
+        setTimeout(() => msg.remove(), 3000); // takes time in miliseconds
+    }
+    else{
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
+        userList.appendChild(li);
 
-const ul = document.querySelector('.items');
-//ul.remove(); // remove all elements from ul
-//ul.lastElementChild.remove(); // removes last element from ul
-ul.firstElementChild.textContent = 'Hello'; // changes the content of the first element from ul
-ul.children[1].innerText = 'Brad';
-ul.lastElementChild.innerHTML = '<h1>Hello</h1>'; // adding HTML dynamically
-
-const btn = document.querySelector('.btn');
-btn.style.background = 'red'; // more dynamic than changing it in CSS
+        // clear fields
+        nameInput.value = '';
+        emailInput.value = '';
+    }
+}
