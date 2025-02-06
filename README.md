@@ -342,10 +342,37 @@ person.email = 'John@gmail.com';
 
 ### Destructuring
 
+**Destructuring Objects**
+
+Destructuring can be understood as pulling something out of an `Object`.
+
 ```js
-// destructuring
+// destructuring objects
 const {firstName, lastName, address: { city }}  = person;
 console.log(firstName);
+```
+
+Additionally, u can rename the destructured keys to avoid clashing with the `Object` u are destructuring from:
+
+```js
+// destructuring and renaming
+const {
+    firstName: _first,
+    lastName: _last,
+    address: { city }
+} = person;
+console.log(_first, _last, city);
+```
+
+**Destructuring Arrays**
+
+We can use names such as `first` and `second` to destructure and pull elements to store in another array. The rest operator `...` followed by a variable name (usually `rest`) is used to denote the rest of the elements stored in a separate array:
+
+```js
+// destructuring arrays
+const numbers = [1, 2, 3, 4, 5];
+const [first, second, ...rest] = numbers;
+console.log(first, second, rest);
 ```
 
 ### JavaScript Object Notation (JSON)
