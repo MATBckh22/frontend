@@ -1,27 +1,38 @@
-const myForm = document.querySelector('#my-form');
-const nameInput = document.querySelector('#name');
-const emailInput = document.querySelector('#email');
-const msg = document.querySelector('.msg');
-const userList = document.querySelector('#users');
-
-myForm.addEventListener('submit', onSubmit);
-
-// remember that the function takes an event parameter
-function onSubmit(e){
-    e.preventDefault();
-
-    if (nameInput.value === '' || emailInput.value === ''){
-        msg.classList.add('error');
-        msg.innerHTML = 'Please enter all fields';
-        setTimeout(() => msg.remove(), 3000); // takes time in miliseconds
+const library = [
+    {
+        _title: 'A1',
+        _author: 'abc',
+        _status: {
+            own: true,
+            reading: false,
+            read: false
+        }
+    },
+    {
+        _title: 'A2',
+        _author: 'def',
+        _status: {
+            own: true,
+            reading: false,
+            read: false
+        }
+    },
+    {
+        _title: 'A3',
+        _author: 'ghi',
+        _status: {
+            own: true,
+            reading: false,
+            read: false
+        }
     }
-    else{
-        const li = document.createElement('li');
-        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
-        userList.appendChild(li);
+];
 
-        // clear fields
-        nameInput.value = '';
-        emailInput.value = '';
-    }
-}
+library[0]._status.read = true;
+library[1]._status.read = true;
+library[2]._status.read = true;
+
+console.log(library);
+
+const { _title: firstBook } = library[0];
+console.log(firstBook);

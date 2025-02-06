@@ -403,7 +403,7 @@ const todos = [
 ];
 ```
 
-We can use `JSON.stringify()` method to convert this to a JSON string:
+Fetch API or other libraries that make http requests automatically stringifies to JSON. `JSON.stringify()` and `JSON.parse()` are particularly useful for local storage where u want to store data in the client where it only accepts strings. We can use `JSON.stringify()` method to convert this to a JSON string:
 
 ```js
 const todoJSON = JSON.stringify(todos); // converts to JSON string
@@ -430,6 +430,13 @@ The output of this will be:
       "isCompleted": true
    }
 ]
+```
+
+Note that we cannot access properties directly from JSON, we have to parse the JSON string back using `JSON.parse()`:
+
+```js
+const todoParsed = JSON.parse(todoJSON);
+console.log(todoParsed);
 ```
 
 ### For Loops and High Order Array Methods
